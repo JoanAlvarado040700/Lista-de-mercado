@@ -1,0 +1,10 @@
+
+a - Agregar articulo
+r - Remover articulo
+v - ver articulos
+m - Marcar articulos
+b - Borrar todos 
+s - Salir 
+
+
+
