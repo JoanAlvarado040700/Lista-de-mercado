@@ -1,8 +1,11 @@
+require "./item.rb"
+
+
 class List
     attr_writer :items
 
     def initialize()
-        @items = Arraty.new()
+        @items = Array.new()
     end
 
     def add_items(text)
@@ -31,6 +34,6 @@ class List
             end
         end
     end
-    
+
     
 end
