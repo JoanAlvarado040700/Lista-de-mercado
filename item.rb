@@ -3,7 +3,7 @@ class Item
 
     def initialize(text = "")
         @text = text
-        @checked = false3
+        @checked = false
     end
 
     def to_s
