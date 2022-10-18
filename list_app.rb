@@ -12,7 +12,7 @@ class ListApp
         print "Bienvenido a la lista de compra!"
 
         loop do
-            puts "a - Agregar un articulo"
+            puts " \na - Agregar un articulo"
             puts "r - Remover un articulo"
             puts "v - Mostrar todos los articulos"
             puts "m - Marcar articulo"
@@ -26,12 +26,17 @@ class ListApp
                 puts "Ingrese el articulo que planea agregar:" 
                 item = gets.chomp
                 @list.add_items(item)
+                puts "--> #{item} agregado exitosamente \n"
+                @list.show_all
+                
 
              when "r"
                 puts "Ingrese el articulo que desea borrar:" 
-             index = gets.chomp
-                @list.remove_items(index.to_i)
-
+                index = gets.chomp
+                item = @list.remove_items(index.to_i)
+                40.times {print "*"}
+                print "\n#{item.text} ha sido eliminado exitosamente!  \n"
+                40.times { print "*"}
              when "m"
                 puts "Cual es el articulo que desea marcar? "
                 index = gets.chomp
@@ -43,8 +48,10 @@ class ListApp
                 @list.remove_all
             when "s"
                 break
+            else
+                puts "Error, opcion no reconocida"
             end
-
+            
         end
         puts "Gracias por usar nuestra aplicacion!!"
     end

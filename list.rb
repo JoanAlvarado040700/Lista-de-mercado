@@ -13,15 +13,15 @@ class List
         @items.push(item)
     end
 
-    def remove_items(index)
+    def remove_items(index) # Borrar articulo especifico
         @items.delete_at(index)
     end    
 
-    def check_item(index)
+    def check_item(index) # Marcar articulo
         @items[index].checked = true
     end
     
-    def remove_all
+    def remove_all # Borrar todo
         puts "Desea eliminar todos los items? s/n"
         delete = gets.chomp
         if delete != "s"
@@ -31,12 +31,18 @@ class List
         end
     end
 
-    def show_all
+    def show_all #Funcion para mostrar todos los articulos
+        19.times { print "*"} 
+        puts " \nLista de Compras! \n"
+        19.times { print "*"} 
+        puts "\n"
+
         if @items.length == 0
-            puts "No hay ningun articulo en tu lista!"
+            puts "\n No hay ningun articulo en tu lista!"
         else
             @items.each_index do |index|
                 puts index.to_s + " - "+ @items[index].to_s
+                
             end
         end
     end
